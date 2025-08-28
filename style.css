@@ -1,68 +1,96 @@
 /* Base styles */
 body {
-  font-family: 'Inter', sans-serif;
   margin: 0;
-  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #0d0d0d;
+  color: #f0f0f0;
   line-height: 1.6;
-  color: #333;
-  background-color: #fdfdfd;
 }
 
+a {
+  color: #00ffcc; /* neon accent */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
 header {
-  background-color: #ffffff;
-  padding: 15px 30px;
   position: sticky;
   top: 0;
-  border-bottom: 1px solid #eee;
+  background-color: #121212;
+  padding: 15px 30px;
+  border-bottom: 1px solid #222;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   padding: 0;
   margin: 0;
 }
 
 nav ul li a {
-  text-decoration: none;
-  color: #333;
   font-weight: 600;
+  font-size: 1rem;
 }
 
-section {
-  max-width: 800px;
-  margin: 50px auto;
+/* Sections */
+.section {
+  max-width: 900px;
+  margin: 80px auto;
   padding: 0 20px;
 }
 
-h1, h2 {
+.hero {
   text-align: center;
-  color: #222;
+  margin-top: 50px;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00ffcc;
 }
 
-ul li {
-  margin: 10px 0;
+.hero p {
+  font-size: 1.2rem;
+  color: #aaa;
 }
 
-ul li a {
-  color: #0066cc;
-  text-decoration: none;
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-ul li a:hover {
-  text-decoration: underline;
+.project-card {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,255,204,0.3);
+}
+
+.project-card h3 {
+  color: #00ffcc;
+  margin-top: 0;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #222;
   margin-top: 50px;
+  color: #555;
 }
