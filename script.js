@@ -1,12 +1,14 @@
-// Simple hover animation for project cards (optional)
-const cards = document.querySelectorAll('.project-card');
+const toggleButton = document.getElementById("theme-toggle");
+const body = document.body;
 
-cards.forEach(card => {
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    card.style.setProperty('--mouse-x', `${x}px`);
-    card.style.setProperty('--mouse-y', `${y}px`);
-  });
+body.classList.add("dark-theme");
+
+toggleButton.addEventListener("click", () => {
+  if (body.classList.contains("dark-theme")) {
+    body.classList.remove("dark-theme");
+    body.classList.add("light-theme");
+  } else {
+    body.classList.remove("light-theme");
+    body.classList.add("dark-theme");
+  }
 });

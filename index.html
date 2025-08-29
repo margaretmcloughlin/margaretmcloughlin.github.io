@@ -1,129 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Margaret M. McLoughlin</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #0a0a0f;
-      color: #e0e0e0;
-      overflow-x: hidden;
-    }
-
-    /* Animated gradient neon background */
-    .background {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(270deg, #0ff, #f0f, #0f0, #08f);
-      background-size: 800% 800%;
-      animation: gradientShift 20s ease infinite;
-      z-index: -1;
-      opacity: 0.15;
-    }
-
-    @keyframes gradientShift {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
-    header {
-      text-align: center;
-      padding: 80px 20px 40px;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      color: #0ff;
-      text-shadow: 0 0 12px #0ff;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #aaa;
-      max-width: 600px;
-      margin: 10px auto 0;
-    }
-
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background: rgba(15, 15, 25, 0.8);
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(0,255,255,0.2);
-    }
-
-    section h2 {
-      color: #0ff;
-      margin-bottom: 15px;
-    }
-
-    section p {
-      line-height: 1.6;
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    a {
-      color: #0ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      color: #f0f;
-      text-shadow: 0 0 8px #f0f;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="background"></div>
-  
-  <header>
+
+  <div class="container">
+    <button id="theme-toggle">Toggle Dark/Light</button>
+
     <h1>Margaret M. McLoughlin</h1>
-    <p>Computer Engineering Graduate | Solutions Engineering Analyst | NCAA Division I Athlete</p>
-  </header>
+    <p>Computer Engineer · Runner · Curious Learner</p>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I’m a recent Computer Engineering graduate from Bucknell University (Class of 2025) and a current Solutions Engineering Analyst at Deloitte. 
-      With a strong background in problem-solving, technical innovation, and leadership, I enjoy working at the intersection of technology and strategy to deliver impactful solutions. 
-      Outside of work, I’m a competitive NCAA Division I distance runner, which has shaped my discipline, resilience, and team-first mindset.
-    </p>
-  </section>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/YOUR-LINK">LinkedIn</a>
+      <a href="https://github.com/YOUR-USERNAME">GitHub</a>
+    </div>
+  </div>
 
-  <section>
-    <h2>Experience</h2>
-    <p><strong>Deloitte – Solutions Engineering Summer Scholar</strong><br>
-    Supported the development of innovative technology solutions, gaining hands-on experience with cross-functional teams and client-facing problem solving.</p>
-
-    <p><strong>NCAA Division I Cross Country & Track Athlete</strong><br>
-    Four years competing at the highest collegiate level, serving as team captain and developing leadership, communication, and performance under pressure.</p>
-  </section>
-
-  <section>
-    <h2>Connect</h2>
-    <p>
-      <a href="https://www.linkedin.com/in/margaret-mcloughlin" target="_blank">LinkedIn</a> |
-      <a href="mailto:yourname@email.com">Email</a> |
-      <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Margaret M. McLoughlin</p>
-  </footer>
+  <script src="script.js"></script>
 </body>
 </html>
