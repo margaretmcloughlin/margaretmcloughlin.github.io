@@ -1,4 +1,3 @@
-/* --------------------------- */
 /* Reset & Fonts */
 body {
   margin: 0;
@@ -11,7 +10,6 @@ body {
   transition: background-color 0.5s, color 0.5s;
 }
 
-/* --------------------------- */
 /* Fullscreen Background */
 .background {
   position: fixed;
@@ -25,6 +23,26 @@ body {
   transition: transform 0.2s ease-out, filter 0.5s ease;
 }
 
+/* Neon animated gradient overlay */
+.background::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  background: linear-gradient(270deg, #0ff, #ff00ff, #00ffea, #ff0066);
+  background-size: 800% 800%;
+  opacity: 0.1;
+  animation: neonFlow 30s ease infinite;
+}
+
+@keyframes neonFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Dark/Light Themes */
 body.dark-theme {
   color: #e0e0e0;
@@ -32,16 +50,11 @@ body.dark-theme {
 body.light-theme {
   color: #111827;
 }
-body.dark-theme .background {
-  filter: brightness(0.6) blur(6px);
-  opacity: 0.75;
-}
-body.light-theme .background {
-  filter: brightness(0.95) blur(4px);
-  opacity: 0.65;
-}
+body.dark-theme .background { filter: brightness(0.6) blur(6px); opacity: 0.75; }
+body.light-theme .background { filter: brightness(0.95) blur(4px); opacity: 0.65; }
+body.dark-theme .background::before { opacity: 0.15; }
+body.light-theme .background::before { opacity: 0.08; }
 
-/* --------------------------- */
 /* Container & Card */
 .container {
   position: relative;
@@ -65,23 +78,19 @@ body.light-theme .background {
   transition: background 0.5s ease, transform 0.3s ease;
   animation: fadeIn 1s forwards;
 }
-body.light-theme .card {
-  background: rgba(255,255,255,0.6);
-}
+body.light-theme .card { background: rgba(255,255,255,0.6); }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --------------------------- */
 /* Links */
 .links {
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
-
 .links a {
   padding: 0.6rem 1.2rem;
   border-radius: 12px;
@@ -91,13 +100,11 @@ body.light-theme .card {
   background: linear-gradient(90deg, #0ff, #f0f);
   color: #000;
 }
-
 .links a:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
-/* --------------------------- */
 /* Theme Toggle Button */
 #theme-toggle {
   padding: 0.6rem 1rem;
@@ -109,12 +116,5 @@ body.light-theme .card {
   color: #fff;
   transition: background 0.3s, transform 0.2s;
 }
-
-#theme-toggle:hover {
-  transform: scale(1.1);
-}
-
-body.light-theme #theme-toggle {
-  background: rgba(255,255,255,0.6);
-  color: #111827;
-}
+#theme-toggle:hover { transform: scale(1.1); }
+body.light-theme #theme-toggle { background: rgba(255,255,255,0.6); color: #111827; }
