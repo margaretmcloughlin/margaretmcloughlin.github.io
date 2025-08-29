@@ -1,21 +1,19 @@
 const toggleButton = document.getElementById("theme-toggle");
 const body = document.body;
+const background = document.querySelector('.background');
 
 // Start in dark mode
 body.classList.add("dark-theme");
 
-// Create the gradient overlay element dynamically
-const overlay = document.createElement('div');
-overlay.className = 'gradient-overlay';
-document.body.appendChild(overlay);
-
 // Toggle dark/light theme
 toggleButton.addEventListener("click", () => {
-  if (body.classList.contains("dark-theme")) {
-    body.classList.remove("dark-theme");
-    body.classList.add("light-theme");
-  } else {
-    body.classList.remove("light-theme");
-    body.classList.add("dark-theme");
-  }
+  body.classList.toggle("dark-theme");
+  body.classList.toggle("light-theme");
+});
+
+// Parallax movement based on mouse
+document.addEventListener("mousemove", (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20; // adjust 20 for movement intensity
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  background.style.transform = `translate(${x}px, ${y}px)`;
 });
