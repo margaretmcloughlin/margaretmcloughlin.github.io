@@ -1,72 +1,120 @@
-/* ---------------------------------- */
-/* Full-Screen Watercolor Background  */
-/* ---------------------------------- */
+/* --------------------------- */
+/* Reset & Fonts */
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+/* --------------------------- */
+/* Fullscreen Background */
 .background {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('images/background.jpg') no-repeat center center/cover;
-  z-index: -2;
-
-  /* Smooth transitions for parallax and filter changes */
-  transition: transform 0.2s ease-out, filter 0.5s ease, opacity 0.5s ease;
-
-  /* Softening the background */
-  filter: brightness(0.8) blur(6px);
-  opacity: 0.7;
-
-  /* Performance optimization for animations */
-  will-change: transform, filter, opacity;
-
-  /* Optional: animated overlay for a subtle high-tech vibe */
-  overflow: hidden;
-}
-
-/* ---------------------------------- */
-/* Dark/Light Theme Adjustments        */
-/* ---------------------------------- */
-body.dark-theme .background {
-  filter: brightness(0.6) blur(6px);  /* darker, muted colors */
-  opacity: 0.75;                       /* slightly more prominent in dark mode */
-}
-
-body.light-theme .background {
-  filter: brightness(0.95) blur(4px);  /* lighter, softer watercolor */
-  opacity: 0.65;                       /* more subtle overlay in light mode */
-}
-
-/* ---------------------------------- */
-/* Optional Neon Gradient Overlay      */
-/* ---------------------------------- */
-.background::before {
-  content: '';
-  position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  z-index: -1;
-  pointer-events: none;
-
-  /* Animated gradient for subtle futuristic feel */
-  background: linear-gradient(270deg, #0ff, #f0f, #0f0, #ff0);
-  background-size: 800% 800%;
-  opacity: 0.15;   /* soft overlay */
-  animation: gradientFlow 30s ease infinite;
+  background: url('images/background.jpg') no-repeat center center/cover;
+  filter: brightness(0.8) blur(6px);
+  opacity: 0.7;
+  z-index: -2;
+  will-change: transform, filter, opacity;
+  transition: transform 0.2s ease-out, filter 0.5s ease;
 }
 
-/* Gradient animation keyframes */
-@keyframes gradientFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* Dark/Light Themes */
+body.dark-theme {
+  color: #e0e0e0;
+}
+body.light-theme {
+  color: #111827;
+}
+body.dark-theme .background {
+  filter: brightness(0.6) blur(6px);
+  opacity: 0.75;
+}
+body.light-theme .background {
+  filter: brightness(0.95) blur(4px);
+  opacity: 0.65;
 }
 
-/* ---------------------------------- */
-/* Optional: Adjust on Hover/Mouse Move for interactivity */
-/* ---------------------------------- */
-body.dark-theme .background:hover,
-body.light-theme .background:hover {
-  filter: brightness(0.7) blur(5px); /* subtle interaction effect */
-  transform: scale(1.02);            /* tiny zoom for depth */
+/* --------------------------- */
+/* Container & Card */
+.container {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 40px rgba(0,0,0,0.3);
+  transition: background 0.5s ease, transform 0.3s ease;
+  animation: fadeIn 1s forwards;
+}
+body.light-theme .card {
+  background: rgba(255,255,255,0.6);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------- */
+/* Links */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.links a {
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  background: linear-gradient(90deg, #0ff, #f0f);
+  color: #000;
+}
+
+.links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* --------------------------- */
+/* Theme Toggle Button */
+#theme-toggle {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  transition: background 0.3s, transform 0.2s;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+body.light-theme #theme-toggle {
+  background: rgba(255,255,255,0.6);
+  color: #111827;
 }
