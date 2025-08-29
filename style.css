@@ -15,3 +15,4 @@ body.dark-theme .background {
 body.light-theme .background {
   filter: brightness(0.9); /* lighter and soft */
 }
+
