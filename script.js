@@ -11,7 +11,7 @@ toggleButton.textContent = "🌙";
 toggleButton.addEventListener("click", () => {
   if(body.classList.contains("dark-theme")){
     body.classList.replace("dark-theme", "light-theme");
-    toggleButton.textContent = "🌞";
+    toggleButton.textContent = "☀️";
   } else {
     body.classList.replace("light-theme", "dark-theme");
     toggleButton.textContent = "🌙";

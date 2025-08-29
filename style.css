@@ -2,7 +2,7 @@
 body {
   margin: 0;
   font-family: 'Inter', system-ui, sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,6 @@ body {
   opacity: 0.1;
   animation: neonFlow 30s ease infinite;
 }
-
 @keyframes neonFlow {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -44,12 +43,8 @@ body {
 }
 
 /* Dark/Light Themes */
-body.dark-theme {
-  color: #e0e0e0;
-}
-body.light-theme {
-  color: #111827;
-}
+body.dark-theme { color: #e0e0e0; }
+body.light-theme { color: #111827; }
 body.dark-theme .background { filter: brightness(0.6) blur(6px); opacity: 0.75; }
 body.light-theme .background { filter: brightness(0.95) blur(4px); opacity: 0.65; }
 body.dark-theme .background::before { opacity: 0.15; }
@@ -85,7 +80,19 @@ body.light-theme .card { background: rgba(255,255,255,0.6); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Links */
+/* Section Cards */
+.card.section {
+  max-width: 700px;
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 40px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, background 0.5s ease;
+}
+.card.section:hover { transform: translateY(-5px); }
+.card.section h2 { margin-top: 0; font-size: 1.8rem; margin-bottom: 1rem; }
+
+/* Links (Buttons) */
 .links {
   display: flex;
   justify-content: center;
@@ -93,16 +100,20 @@ body.light-theme .card { background: rgba(255,255,255,0.6); }
 }
 .links a {
   padding: 0.6rem 1.2rem;
-  border-radius: 12px;
+  border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  background: linear-gradient(90deg, #0ff, #f0f);
+  background-color: #0ff;
   color: #000;
+}
+body.light-theme .links a {
+  background-color: #0077b6;
+  color: #fff;
 }
 .links a:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
 /* Theme Toggle Button */
