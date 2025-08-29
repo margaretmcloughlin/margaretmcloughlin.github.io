@@ -3,72 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Margaret McLoughlin | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>My Website</title>
+  <style>
+    /* Basic page styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background 0.5s ease, color 0.5s ease;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+    }
+
+    /* Overlay gradient */
+    .gradient-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(270deg, rgba(255,0,150,0.2), rgba(0,200,255,0.2), rgba(0,255,200,0.2));
+      background-size: 600% 600%;
+      animation: gradientFlow 20s ease infinite;
+      pointer-events: none; /* lets you still click on stuff */
+    }
+
+    @keyframes gradientFlow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* Toggle button styling */
+    .toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 20px;
+      background: rgba(255,255,255,0.8);
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background: rgba(200,200,200,0.9);
+    }
+
+    /* Dark mode */
+    body.dark-mode {
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f0f0f0;
+    }
+
+    body.dark-mode .toggle-btn {
+      background: rgba(30,30,30,0.8);
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <button class="toggle-btn" onclick="toggleMode()">🌙 Dark / Light</button>
+  <div class="gradient-overlay"></div>
 
-  <section id="home" class="section hero">
-    <div class="container">
-      <h1>Hello, I’m Margaret McLoughlin</h1>
-      <p>Computer Engineer | Developer | Problem Solver</p>
-    </div>
-  </section>
+  <h1>Welcome to My Website</h1>
+  <p>This has a watercolor + futuristic animated gradient vibe.</p>
 
-  <section id="about" class="section">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I recently graduated from Bucknell University with a degree in Computer Engineering. I enjoy building projects, solving complex problems, and creating elegant solutions. Outside of work, I’m a passionate runner and coffee enthusiast.</p>
-    </div>
-  </section>
-
-  <section id="projects" class="section">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Project 1</h3>
-          <p>Short description of the project.</p>
-          <a href="#" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-          <h3>Project 2</h3>
-          <p>Short description of the project.</p>
-          <a href="#" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-          <h3>Project 3</h3>
-          <p>Short description of the project.</p>
-          <a href="#" target="_blank">View on GitHub</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/margaretmcloughlin/" target="_blank">linkedin.com/in/margaretmcloughlin</a></p>
-      <p>GitHub: <a href="https://github.com/margaretmcloughlin" target="_blank">github.com/margaretmcloughlin</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Margaret McLoughlin</p>
-  </footer>
-
-  <script src="script.js"></script>
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 </body>
 </html>
