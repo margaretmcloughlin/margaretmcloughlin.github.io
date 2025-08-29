@@ -3,66 +3,264 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name</title>
+  <title>Margaret McLoughlin</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Fullscreen Background -->
+  <!-- Scroll Progress Bar -->
+  <div class="progress-bar" id="progress-bar"></div>
+
+  <!-- Background -->
   <div class="background"></div>
 
-  <!-- Main Content -->
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="navbar__list">
+      <li><a href="#hero" class="navbar__link">Home</a></li>
+      <li><a href="#about" class="navbar__link">About</a></li>
+      <li><a href="#education" class="navbar__link">Education</a></li>
+      <li><a href="#experience" class="navbar__link">Experience</a></li>
+      <li><a href="#projects" class="navbar__link">Projects</a></li>
+      <li><a href="#skills" class="navbar__link">Skills</a></li>
+      <li><a href="#contact" class="navbar__link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Theme Toggle -->
+  <button class="theme-toggle-btn" id="theme-toggle">🌙</button>
+
+  <!-- Main Container -->
   <div class="container">
 
-    <!-- Hero Card -->
-    <div class="card hero">
-      <h1>Your Name</h1>
-      <p>Professional Title / Role</p>
-      <div class="links">
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
+    <!-- Hero Section -->
+    <section id="hero" class="section animate">
+      <div class="hero-text">
+        <h1 class="section__title">Margaret M. McLoughlin</h1>
+        <p class="hero-subtitle">Computer Engineering Graduate | Bucknell University | Solutions Engineering Analyst</p>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/margaret-mcloughlin" target="_blank" class="links__item">LinkedIn</a>
+          <a href="https://github.com/margaretmcloughlin" target="_blank" class="links__item">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section animate">
+      <h2 class="section__title">About Me</h2>
+      <p>I’m a Computer Engineering graduate from Bucknell University with a love for solving technical problems. I’ve led and mentored peers across academic, professional, and athletic settings, learning that the best results come from collaboration and a strong sense of responsibility. I bring this mindset to every project I take on, from software and embedded systems to data-driven solutions.</p>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section animate">
+      <h2 class="section__title">Education</h2>
+
+      <div class="edu-card card">
+        <h3>Bucknell University, Lewisburg, PA</h3>
+        <p><strong>Bachelor of Science in Computer Engineering</strong>, Minor in Latin</p>
+        <p>Graduated May 2025</p>
+      </div>
+
+      <div class="edu-card card">
+        <h3>Kellenberg Memorial High School, Uniondale, NY</h3>
+        <p>Graduated June 2021</p>
+      </div>
+    </section>
+
+    <!-- Experience & Leadership Section -->
+    <section id="experience" class="section animate">
+      <h2 class="section__title">Experience & Leadership</h2>
+
+      <div class="experience-card card">
+        <h3>Deloitte Consulting LLP – Solutions Engineering Summer Scholar</h3>
+        <p>Harrisburg, PA | June 2024 – August 2024</p>
+        <ul class="list">
+          <li>Contributed to a public sector project aimed at improving how services reach local communities.</li>
+          <li>Designed and presented prototype dashboards to internal teams, surfacing key trends to guide data-driven decision making.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card card">
+        <h3>TE Connectivity – Capstone Design Project Team Member</h3>
+        <p>Harrisburg, PA | August 2024 – May 2025</p>
+        <ul class="list">
+          <li>Partnered through Bucknell’s Interdisciplinary Senior Design program to address challenges in gathering labeled data for AI model training.</li>
+          <li>Developed a Blender-to-Python automation tool to generate synthetic data, potentially reducing dataset creation time by 800 hours annually.</li>
+          <li>Proposed solution projected to save $16,000 annually and mitigate up to $100M in potential infrastructure replacement costs.</li>
+          <li>Winner of the TE Connectivity Global AI Cup for innovative solutions.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card card">
+        <h3>Bucknell University – TLC Advanced Staff Supervisor & Facilitator</h3>
+        <p>Lewisburg, PA | August 2023 – May 2025</p>
+        <ul class="list">
+          <li>Led collaborative study groups in Latin and Computer Science; promoted to Advanced Staff Supervisor.</li>
+          <li>Redesigned staff development curriculum to focus on practical skills for effective peer facilitation.</li>
+          <li>Supervised and mentored peer staff, providing feedback to support growth and improve academic support services.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card card">
+        <h3>Mill-Max Manufacturing Corp. – Electrical Engineering Intern</h3>
+        <p>Oyster Bay, NY | June 2023 – August 2023</p>
+        <ul class="list">
+          <li>Programmed ARM Cortex-M4 microcontrollers in C.</li>
+          <li>Developed testing procedures to verify the integrity and functionality of specialized PCBs.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card card">
+        <h3>Bucknell University – Electrical & Computer Engineering Student Leader</h3>
+        <p>Lewisburg, PA | December 2024 – May 2025</p>
+        <ul class="list">
+          <li>Collaborated with faculty to design a new four-year personal and professional development course through an independent study.</li>
+          <li>Served as a student leader during its pilot semester for first-year students, mentoring and guiding peers in their academic and professional growth.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card card">
+        <h3>Bucknell University – Global Education Office Student Assistant</h3>
+        <p>Lewisburg, PA | August 2022 – May 2025</p>
+        <ul class="list">
+          <li>Greeted visitors, fielded calls, and compiled records and materials for administrative tasks.</li>
+          <li>Supported faculty in organizing global education fairs and promotional events.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card card">
+        <h3>The Creek Club – Aquatics Assistant Supervisor, Swim Team & Camp Coordinator</h3>
+        <p>Lattingtown, NY | May 2019 – August 2022</p>
+        <ul class="list">
+          <li>Supervised lifeguards and managed equipment inventory and sales.</li>
+          <li>Delegated tasks and lesson plans to assistant coaches.</li>
+        </ul>
+      </div>
+
+      <div class="experience-card card">
+        <h3>Study Abroad – Archaeology, Geology & Engineering in Global Context</h3>
+        <p>Bucknell University | Summer 2022 & Summer 2023</p>
+        <ul class="list">
+          <li>Studied Archaeology and Geology in Greece (2022).</li>
+          <li>Studied Engineering in a Global/Societal Context in London & Dublin (2023).</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section animate">
+      <h2 class="section__title">Projects</h2>
+
+      <div class="project-card card" data-modal="jeopardy-modal">
+        <h3>JeopardyEasy – Software Engineering Final Project</h3>
+        <p>Click for diagrams and system overview.</p>
+      </div>
+
+      <div class="project-card card" data-modal="drinksmart-modal">
+        <h3>DrinkSmart – IoT Hydration Tracker</h3>
+        <p>Click for diagrams and system overview.</p>
+      </div>
+
+      <div class="project-card card" data-modal="signal-modal">
+        <h3>Signal Analysis – MATLAB</h3>
+        <p>Click for more info.</p>
+      </div>
+
+      <div class="project-card card" data-modal="pv-modal">
+        <h3>PV Power Project</h3>
+        <p>Click for more info.</p>
+      </div>
+    </section>
+
+    <!-- Project Modals -->
+    <div id="jeopardy-modal" class="modal">
+      <div class="modal__content">
+        <span class="modal__close-btn">&times;</span>
+        <h3>JeopardyEasy – System Overview</h3>
+        <p>The JeopardyEasy system is designed for simplicity and ease of play. Users select categories, answer questions, and progress through the game. Current version supports single-round play without a timer.</p>
       </div>
     </div>
 
-    <!-- About Section -->
-    <div class="card section">
-      <h2>About Me</h2>
-      <p><!-- Add your about text here --></p>
+    <div id="drinksmart-modal" class="modal">
+      <div class="modal__content">
+        <span class="modal__close-btn">&times;</span>
+        <h3>DrinkSmart – IoT Hydration Tracker</h3>
+        <p>Track water consumption using Raspberry Pi Pico W and sensors. Server logs data and sends notifications. Custom MVP sleeve holds sensors on any water bottle.</p>
+      </div>
     </div>
 
-    <!-- Projects Section -->
-    <div class="card section">
-      <h2>Projects</h2>
-      <ul>
-        <li><!-- Project 1 --></li>
-        <li><!-- Project 2 --></li>
-        <li><!-- Project 3 --></li>
-      </ul>
+    <div id="signal-modal" class="modal">
+      <div class="modal__content">
+        <span class="modal__close-btn">&times;</span>
+        <h3>Signal Analysis – MATLAB</h3>
+        <p>FFT plots, harmonics identification, and noise filtering.</p>
+      </div>
+    </div>
+
+    <div id="pv-modal" class="modal">
+      <div class="modal__content">
+        <span class="modal__close-btn">&times;</span>
+        <h3>PV Power Project</h3>
+        <p>High-efficiency washer/dryer prototype, energy conservation design, and scaled prototype testing.</p>
+      </div>
     </div>
 
     <!-- Skills Section -->
-    <div class="card section">
-      <h2>Skills</h2>
-      <p><!-- Add your skills here --></p>
-    </div>
+    <section id="skills" class="section animate">
+      <h2 class="section__title">Skills</h2>
+
+      <div class="skill">
+        <label>Python</label>
+        <div class="progress"><div data-width="85%"></div></div>
+      </div>
+
+      <div class="skill">
+        <label>C</label>
+        <div class="progress"><div data-width="80%"></div></div>
+      </div>
+
+      <div class="skill">
+        <label>Java</label>
+        <div class="progress"><div data-width="70%"></div></div>
+      </div>
+
+      <div class="skill">
+        <label>MATLAB</label>
+        <div class="progress"><div data-width="75%"></div></div>
+      </div>
+
+      <div class="skill">
+        <label>Embedded Systems / Microcontrollers</label>
+        <div class="progress"><div data-width="80%"></div></div>
+      </div>
+
+      <div class="skill">
+        <label>Git / Version Control</label>
+        <div class="progress"><div data-width="80%"></div></div>
+      </div>
+    </section>
 
     <!-- Contact Section -->
-    <div class="card section">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-    </div>
-
-    <!-- Theme toggle button -->
-    <button id="theme-toggle">🌙</button>
+    <section id="contact" class="section animate">
+      <h2 class="section__title">Contact</h2>
+      <p>Email: <a href="mailto:margaretmcloughlin25@gmail.com">margaretmcloughlin25@gmail.com</a></p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/margaret-mcloughlin-a6336422a/" target="_blank" class="links__item">LinkedIn</a>
+        <a href="https://github.com/margaretmcloughlin" target="_blank" class="links__item">GitHub</a>
+      </div>
+    </section>
 
   </div>
 
-  <!-- JS -->
+  <!-- Custom JS -->
   <script src="script.js"></script>
+
 </body>
 </html>
