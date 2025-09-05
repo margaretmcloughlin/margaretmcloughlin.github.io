@@ -4,8 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Margaret McLoughlin</title>
+  <meta name="description" content="Portfolio of Margaret McLoughlin, Computer Engineering graduate from Bucknell University and Solutions Engineering Analyst.">
 
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
@@ -17,27 +20,26 @@
   <div class="progress-bar" id="progress-bar"></div>
 
   <!-- Background -->
-  <div class="background"></div>
+  <div class="background" aria-hidden="true"></div>
 
+  <!-- Header / Navbar -->
+  <header>
+    <nav class="navbar" aria-label="Main navigation">
+      <ul class="navbar__list">
+        <li><a href="#hero" class="navbar__link">Home</a></li>
+        <li><a href="#about" class="navbar__link">About</a></li>
+        <li><a href="#education" class="navbar__link">Education</a></li>
+        <li><a href="#experience" class="navbar__link">Experience</a></li>
+        <li><a href="#projects" class="navbar__link">Projects</a></li>
+        <li><a href="#skills" class="navbar__link">Skills</a></li>
+        <li><a href="#contact" class="navbar__link">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+  </header>
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <ul class="navbar__list">
-      <li><a href="#hero" class="navbar__link">Home</a></li>
-      <li><a href="#about" class="navbar__link">About</a></li>
-      <li><a href="#education" class="navbar__link">Education</a></li>
-      <li><a href="#experience" class="navbar__link">Experience</a></li>
-      <li><a href="#projects" class="navbar__link">Projects</a></li>
-      <li><a href="#skills" class="navbar__link">Skills</a></li>
-      <li><a href="#contact" class="navbar__link">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Theme Toggle -->
-  <button class="theme-toggle-btn" id="theme-toggle">🌙</button>
-
-  <!-- Main Container -->
-  <div class="container">
+  <!-- Main Content -->
+  <main class="container">
 
     <!-- Hero Section -->
     <section id="hero" class="section animate">
@@ -45,8 +47,8 @@
         <h1 class="section__title">Margaret M. McLoughlin</h1>
         <p class="hero-subtitle">Computer Engineering Graduate | Bucknell University | Solutions Engineering Analyst</p>
         <div class="links">
-          <a href="https://www.linkedin.com/in/margaret-mcloughlin" target="_blank" class="links__item">LinkedIn</a>
-          <a href="https://github.com/margaretmcloughlin" target="_blank" class="links__item">GitHub</a>
+          <a href="https://www.linkedin.com/in/margaret-mcloughlin" target="_blank" rel="noopener noreferrer" class="links__item">LinkedIn</a>
+          <a href="https://github.com/margaretmcloughlin" target="_blank" rel="noopener noreferrer" class="links__item">GitHub</a>
         </div>
       </div>
     </section>
@@ -60,13 +62,11 @@
     <!-- Education Section -->
     <section id="education" class="section animate">
       <h2 class="section__title">Education</h2>
-
       <div class="edu-card card">
         <h3>Bucknell University, Lewisburg, PA</h3>
         <p><strong>Bachelor of Science in Computer Engineering</strong>, Minor in Latin</p>
         <p>Graduated May 2025</p>
       </div>
-
       <div class="edu-card card">
         <h3>Kellenberg Memorial High School, Uniondale, NY</h3>
         <p>Graduated June 2021</p>
@@ -154,110 +154,17 @@
 
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section animate">
-      <h2 class="section__title">Projects</h2>
-
-      <div class="project-card card" data-modal="jeopardy-modal">
-        <h3>JeopardyEasy – Software Engineering Final Project</h3>
-        <p>Click for diagrams and system overview.</p>
-      </div>
-
-      <div class="project-card card" data-modal="drinksmart-modal">
-        <h3>DrinkSmart – IoT Hydration Tracker</h3>
-        <p>Click for diagrams and system overview.</p>
-      </div>
-
-      <div class="project-card card" data-modal="signal-modal">
-        <h3>Signal Analysis – MATLAB</h3>
-        <p>Click for more info.</p>
-      </div>
-
-      <div class="project-card card" data-modal="pv-modal">
-        <h3>PV Power Project</h3>
-        <p>Click for more info.</p>
-      </div>
-    </section>
-
-    <!-- Project Modals -->
-    <div id="jeopardy-modal" class="modal">
-      <div class="modal__content">
-        <span class="modal__close-btn">&times;</span>
-        <h3>JeopardyEasy – System Overview</h3>
-        <p>The JeopardyEasy system is designed for simplicity and ease of play. Users select categories, answer questions, and progress through the game. Current version supports single-round play without a timer.</p>
-      </div>
-    </div>
-
-    <div id="drinksmart-modal" class="modal">
-      <div class="modal__content">
-        <span class="modal__close-btn">&times;</span>
-        <h3>DrinkSmart – IoT Hydration Tracker</h3>
-        <p>Track water consumption using Raspberry Pi Pico W and sensors. Server logs data and sends notifications. Custom MVP sleeve holds sensors on any water bottle.</p>
-      </div>
-    </div>
-
-    <div id="signal-modal" class="modal">
-      <div class="modal__content">
-        <span class="modal__close-btn">&times;</span>
-        <h3>Signal Analysis – MATLAB</h3>
-        <p>FFT plots, harmonics identification, and noise filtering.</p>
-      </div>
-    </div>
-
-    <div id="pv-modal" class="modal">
-      <div class="modal__content">
-        <span class="modal__close-btn">&times;</span>
-        <h3>PV Power Project</h3>
-        <p>High-efficiency washer/dryer prototype, energy conservation design, and scaled prototype testing.</p>
-      </div>
-    </div>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section animate">
-      <h2 class="section__title">Skills</h2>
-
-      <div class="skill">
-        <label>Python</label>
-        <div class="progress"><div data-width="85%"></div></div>
-      </div>
-
-      <div class="skill">
-        <label>C</label>
-        <div class="progress"><div data-width="80%"></div></div>
-      </div>
-
-      <div class="skill">
-        <label>Java</label>
-        <div class="progress"><div data-width="70%"></div></div>
-      </div>
-
-      <div class="skill">
-        <label>MATLAB</label>
-        <div class="progress"><div data-width="75%"></div></div>
-      </div>
-
-      <div class="skill">
-        <label>Embedded Systems / Microcontrollers</label>
-        <div class="progress"><div data-width="80%"></div></div>
-      </div>
-
-      <div class="skill">
-        <label>Git / Version Control</label>
-        <div class="progress"><div data-width="80%"></div></div>
-      </div>
-    </section>
-
     <!-- Contact Section -->
-    <section id="contact" class="section animate">
+    <footer id="contact" class="section animate">
       <h2 class="section__title">Contact</h2>
-      <p>Email: <a href="mailto:margaretmcloughlin25@gmail.com">margaretmcloughlin25@gmail.com</a></p>
       <div class="links">
-        <a href="https://www.linkedin.com/in/margaret-mcloughlin-a6336422a/" target="_blank" class="links__item">LinkedIn</a>
-        <a href="https://github.com/margaretmcloughlin" target="_blank" class="links__item">GitHub</a>
+        <a href="mailto:margaretmcloughlin25@gmail.com" class="links__item">Email Margaret</a>
+        <a href="https://www.linkedin.com/in/margaret-mcloughlin" target="_blank" rel="noopener noreferrer" class="links__item">LinkedIn</a>
+        <a href="https://github.com/margaretmcloughlin" target="_blank" rel="noopener noreferrer" class="links__item">GitHub</a>
       </div>
-    </section>
+    </footer>
 
-  </div>
+  </main>
 
   <!-- Custom JS -->
   <script src="script.js"></script>
